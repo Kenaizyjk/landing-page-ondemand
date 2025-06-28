@@ -532,10 +532,10 @@
             const faqLoader = document.getElementById('faqLoader');
             const faqContent = document.getElementById('faqContent');
 
-            const apiKey = "";
+            const apiKey = "AIzaSyAmnvZvte-D_kjfUsgfR_-MEgaTzDFFJhs";
 
             async function callGemini(prompt, buttonToDisable) {
-                 if (!apiKey) {
+                 if (!apiKey || apiKey === "COLE_SUA_CHAVE_SECRETA_DA_API_AQUI") {
                     showNotification("A chave da API Gemini não está configurada.");
                     return null;
                 }
