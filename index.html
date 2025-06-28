@@ -1,184 +1,612 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head> 
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P8K2XLFL');</script>
-<!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>On Demand — Marketing Digital de Alta Performance</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
-    body { font-family: 'Poppins', sans-serif; }
-    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-  </style>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <!-- Metatags Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Demand — Agência de Marketing de Performance com IA</title>
+    <meta name="description" content="Estratégias de marketing de performance potencializadas por IA. Transformamos dados em domínio de mercado para empresas ambiciosas.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://site.com">
+
+    <!-- SEO: Open Graph / Facebook & Twitter Cards -->
+    <meta property="og:title" content="On Demand — Agência de Marketing de Performance com IA">
+    <meta property="og:description" content="Estratégias de marketing de performance que transformam seu orçamento em domínio de mercado.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/06b6d4?text=On+Demand+Performance">
+    <meta property="og:url" content="https://site.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="On Demand — Agência de Marketing de Performance com IA">
+    <meta name="twitter:description" content="Estratégias de marketing de performance que transformam seu orçamento em domínio de mercado.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0f172a/06b6d4?text=On+Demand+Performance">
+
+    <!-- SEO: JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "On Demand Performance",
+      "url": "https://site.com",
+      "logo": "https://site.com/logo.svg",
+      "telephone": "+31996966686",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressCountry": "BR"
+      },
+      "description": "Agência de marketing de performance focada em dados, funis otimizados e obsessão por ROI."
+    }
+    </script>
+    
+    <!-- Fontes e Pré-conexões -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://i.pravatar.cc">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%2306b6d4" d="M50,5A45,45,0,1,1,5,50,45,45,0,0,1,50,5m0-5A50,50,0,1,0,100,50,50,50,0,0,0,50,0Z"/><path fill="%2306b6d4" d="M30 70l20-40 20 40H30z"/></svg>'>
+
+    <!-- Estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Configuração do Tailwind e Estilos Customizados -->
+    <style>
+        :root {
+            --cor-fundo: #0f172a; /* slate-900 */
+            --cor-fundo-sec: #1e293b; /* slate-800 */
+            --cor-texto: #e2e8f0; /* slate-200 */
+            --cor-texto-sec: #94a3b8; /* slate-400 */
+            --cor-acento: #06b6d4; /* cyan-500 */
+            --cor-acento-hover: #0891b2; /* cyan-600 */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+        /* Correção para âncoras e header fixo */
+        section[id] {
+            scroll-margin-top: 5rem; 
+        }
+        /* Estilos de Foco para Acessibilidade */
+        :focus-visible {
+            outline: 3px solid var(--cor-acento);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        .hero-aurora::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 900px;
+            background-image: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 55%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .glass-header {
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4), 0 0 5px rgba(6, 182, 212, 0.7);
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 10px rgba(6, 182, 212, 0.9);
+            transform: scale(1.05);
+        }
+        .client-logo {
+            filter: grayscale(100%) opacity(60%);
+            transition: all 0.3s ease;
+        }
+        .client-logo:hover {
+            filter: grayscale(0%) opacity(100%);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--cor-acento);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Skip link */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
+    </style>
 </head>
-<body class="bg-[#0d1117] text-slate-100 antialiased scroll-smooth">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8K2XLFL"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <!-- NAVBAR -->
-  <nav class="sticky top-0 z-40 backdrop-blur bg-[#0d1117]/70 border-b border-slate-800">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a href="#top" class="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-purple-500">
-        On&nbsp;Demand
-      </a>
-      <ul class="hidden gap-8 text-sm md:flex">
-        <li><a href="#planos" class="hover:text-sky-400">Planos</a></li>
-        <li><a href="#stats" class="hover:text-sky-400">Resultados</a></li>
-        <li><a href="#portfolio" class="hover:text-sky-400">Portfólio</a></li>
-        <li><a href="#quemsomos" class="hover:text-sky-400">Quem Somos</a></li>
-        <li><a href="#contato" class="hover:text-sky-400">Contato</a></li>
-      </ul>
-      <a href="#contato" class="hidden md:inline-block rounded-full bg-gradient-to-r from-pink-500 to-sky-500 px-5 py-2 text-sm font-semibold">
-        Começar
-      </a>
-    </div>
-  </nav>
+<body class="antialiased">
 
-  <!-- HERO -->
-  <header id="top" class="relative overflow-hidden bg-gradient-to-br from-purple-500/10 via-indigo-600/15 to-sky-500/15">
-    <div class="relative mx-auto flex min-h-[90vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
-      <h1 class="text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl">On Demand</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-        Mais que uma agência, somos o seu braço direito de marketing. Trabalhamos ao seu lado para construir uma presença digital forte e lucrativa.
-      </p>
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="#planos" class="rounded-full bg-white/90 px-8 py-4 text-lg font-semibold text-[#0d1117] shadow-lg hover:bg-white transition">
-          Ver Planos
-        </a>
-        <a href="#contato" class="rounded-full border border-white/60 px-8 py-4 text-lg font-semibold text-white hover:bg-white/10 transition">
-          Começar
-        </a>
-      </div>
-    </div>
-  </header>
+    <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-cyan-500 text-slate-900 font-bold absolute top-0 left-0 z-50">Pular para o conteúdo</a>
 
-  <!-- ESTATÍSTICAS DE DESEMPENHO -->
-  <section id="stats" class="mx-auto max-w-6xl px-6 py-20">
-    <h2 class="text-center text-3xl font-extrabold text-white">Nossos Resultados</h2>
-    <p class="mx-auto mt-2 max-w-2xl text-center text-slate-400">Dados reais de crescimento para negócios locais</p>
-    <div class="mt-8 grid gap-8 md:grid-cols-3 text-center">
-      <div class="glass rounded-3xl p-8 shadow-xl">
-        <h3 class="text-3xl font-extrabold text-indigo-400">+120%</h3>
-        <p class="mt-2 text-slate-300">Aumento médio de faturamento</p>
-      </div>
-      <div class="glass rounded-3xl p-8 shadow-xl">
-        <h3 class="text-3xl font-extrabold text-green-400">+85%</h3>
-        <p class="mt-2 text-slate-300">Mais conversões em campanhas</p>
-      </div>
-      <div class="glass rounded-3xl p-8 shadow-xl">
-        <h3 class="text-3xl font-extrabold text-pink-400">+200%</h3>
-        <p class="mt-2 text-slate-300">Engajamento em redes sociais</p>
-      </div>
-    </div>
-  </section>
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-40 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <div class="flex-shrink-0">
+                <a href="#top" class="text-2xl font-extrabold text-white flex items-center gap-2">
+                    <svg width="32" height="32" viewBox="0 0 138 138" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo da On Demand">
+                        <title>Logo On Demand</title>
+                        <path d="M69 138C107.106 138 138 107.106 138 69C138 30.8944 107.106 0 69 0C30.8944 0 0 30.8944 0 69C0 107.106 30.8944 138 69 138Z" fill="#0F172A"/>
+                        <path d="M48.8043 103.498L68.9982 46.502L89.192 103.498H48.8043Z" stroke="#06B6D4" stroke-width="12"/>
+                    </svg>
+                    On Demand<span class="text-cyan-400">.</span>
+                </a>
+            </div>
 
-  <!-- PLANOS -->
-  <section id="planos" class="py-24 bg-slate-900/40 border-y border-slate-800">
-    <div class="mx-auto max-w-6xl px-6">
-      <h2 class="text-center text-4xl font-extrabold">Planos que se adaptam à sua fase</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-center text-slate-400">Do básico ao domínio total do seu nicho.</p>
-      <div class="mt-16 grid gap-8 md:grid-cols-3">
-        <!-- Ponto de Partida -->
-        <div class="glass rounded-3xl p-10 shadow-lg hover:shadow-2xl transition">
-          <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-green-400">🌱 Ponto de Partida</h3>
-          <ul class="space-y-2 text-sm text-slate-300">
-            <li>Gestão de redes sociais</li>
-            <li>Google Meu Negócio otimizado</li>
-            <li>Suporte estratégico</li>
-          </ul>
+            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-semibold">
+                <a href="#resultados" class="text-slate-300 hover:text-cyan-400 transition-colors">Resultados</a>
+                <a href="#planos" class="text-slate-300 hover:text-cyan-400 transition-colors">Planos</a>
+                <a href="#faq" class="text-slate-300 hover:text-cyan-400 transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/31996966686" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-cyan-500 text-white px-3 py-1.5 rounded-md font-semibold text-xs hover:bg-cyan-600 transition-all duration-300 hover:scale-105">
+                    Fale com um Especialista
+                </a>
+                <button id="mobileToggle" type="button" class="md:hidden z-50 text-white" aria-label="Abrir menu" aria-expanded="false">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
         </div>
-        <!-- Conversão Inteligente -->
-        <div class="relative rounded-3xl border-2 border-sky-500 p-10 shadow-[0_0_50px_-10px_#0ea5e9] transition">
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-sky-500 px-4 py-1 text-xs font-bold uppercase tracking-wider text-slate-900">Favorito</span>
-          <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-sky-400">🎯 Conversão Inteligente</h3>
-          <ul class="space-y-2 text-sm text-slate-300">
-            <li>Tudo do Ponto de Partida</li>
-            <li>Gestão de tráfego (Meta + Google)</li>
-            <li>Landing pages de alta conversão</li>
-          </ul>
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-slate-700">
+            <nav class="flex flex-col items-center gap-6 py-8">
+                <a href="#resultados" class="menu-link text-slate-300 hover:text-cyan-400">Resultados</a>
+                <a href="#planos" class="menu-link text-slate-300 hover:text-cyan-400">Planos</a>
+                <a href="#faq" class="menu-link text-slate-300 hover:text-cyan-400">FAQ</a>
+                <a href="https://wa.me/31996966686" class="mt-4 bg-cyan-500 text-white px-8 py-3 rounded-full font-semibold">Fale no WhatsApp</a>
+            </nav>
         </div>
-        <!-- Domínio Digital -->
-        <div class="glass rounded-3xl p-10 shadow-lg hover:shadow-2xl transition">
-          <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-purple-400">🚀 Domínio Digital</h3>
-          <ul class="space-y-2 text-sm text-slate-300">
-            <li>Tudo do Conversão Inteligente</li>
-            <li>Edição de vídeos & IA commercials</li>
-            <li>Relatórios avançados + reuniões semanais</li>
-          </ul>
+    </header>
+
+    <main id="main-content">
+        <section id="top" class="relative hero-aurora pt-32 pb-24 text-center overflow-hidden">
+            <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up">
+                <span class="inline-block bg-cyan-400/10 text-cyan-400 px-4 py-1 rounded-full text-sm font-semibold">Agência de Performance para Empresas Ambiciosas.</span>
+                <h1 class="mt-6 text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    O Fim do Marketing Intuitivo.
+                </h1>
+                <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
+                   Estratégias de performance que transformam seu orçamento em <span class="text-white font-semibold">domínio de mercado.</span> Com dados, funis otimizados e obsessão por ROI, nós entregamos clientes.
+                </p>
+                <div class="mt-10">
+                    <a href="#planos" class="inline-flex items-center gap-3 bg-cyan-500 text-slate-900 px-8 py-4 rounded-full font-bold btn-glow">
+                        Descobrir Planos de Crescimento
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodologia" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                 <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Não somos apenas mais uma agência.</h2>
+                    <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Nossa abordagem é diferente. Somos seu parceiro estratégico focado em uma única métrica: o seu crescimento.</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up">
+                         <div class="bg-cyan-400/10 text-cyan-400 w-12 h-12 rounded-lg flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Obsessão por Dados</h3>
+                        <p class="mt-2 text-slate-400">Decisões baseadas em análise, não em achismos. Monitoramos cada etapa do funil para otimizar seu ROI continuamente.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="100">
+                         <div class="bg-cyan-400/10 text-cyan-400 w-12 h-12 rounded-lg flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2m6-4v2m-6-2v2"></path></svg></div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Transparência Radical</h3>
+                        <p class="mt-2 text-slate-400">Você tem acesso a dashboards em tempo real e relatórios claros que mostram exatamente para onde seu dinheiro está indo e qual o retorno.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="200">
+                         <div class="bg-cyan-400/10 text-cyan-400 w-12 h-12 rounded-lg flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg></div>
+                        <h3 class="mt-6 text-xl font-bold text-white">Parceria Estratégica</h3>
+                        <p class="mt-2 text-slate-400">Não somos "fornecedores". Mergulhamos no seu negócio para entender seus desafios e atuar como uma extensão da sua equipe de crescimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="depoimentos" class="py-24 bg-slate-900/70">
+            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+                <img loading="lazy" decoding="async" src="https://i.pravatar.cc/150?u=sofia" alt="Foto de Sofia Lima" class="w-24 h-24 rounded-full border-4 border-cyan-400 mx-auto">
+                 <blockquote class="mt-8 text-xl md:text-2xl font-medium italic text-white">
+                    “A parceria com a On Demand foi um divisor de águas. Saímos de um CPL de R$80 para R$25 em três meses, e nosso ROI sobre o investimento em mídia saltou 250%. Eles são, sem dúvida, o melhor time de performance com quem já trabalhamos.”
+                </blockquote>
+                <div class="mt-8">
+                    <p class="font-bold text-white text-lg">Sofia Lima</p>
+                    <p class="text-sm text-slate-400">Diretora de Marketing, InovaTech Soluções</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Diagnóstico com IA -->
+        <section id="diagnostico" class="py-24">
+            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+                <span class="font-semibold text-cyan-400">INTELIGÊNCIA ARTIFICIAL ESTRATÉGICA</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-white">Receba um Diagnóstico Instantâneo para o seu Negócio</h2>
+                <p class="mt-4 text-slate-300 max-w-2xl mx-auto">Insira o tipo do seu negócio ou a URL do seu site e nossa IA gerará uma análise inicial com os próximos passos recomendados para seu crescimento.</p>
+                
+                <div class="mt-8 max-w-2xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input id="businessInput" type="text" placeholder="Ex: e-commerce de moda, clínica de estética, etc." class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                        <button id="diagnoseBtn" class="inline-flex items-center justify-center gap-3 bg-cyan-500 text-slate-900 px-8 py-3 rounded-full font-bold btn-glow whitespace-nowrap">
+                            ✨ Gerar Diagnóstico com IA
+                        </button>
+                    </div>
+                </div>
+
+                <div id="diagnosisResult" class="mt-8 text-left hidden">
+                    <div id="loader" class="mx-auto loader"></div>
+                    <div id="resultContent" class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                        <!-- O resultado da IA será inserido aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultados" class="py-24 bg-slate-900/70">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="font-semibold text-cyan-400">PERFORMANCE COMPROVADA EM NÚMEROS</span>
+                    <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-white">Resultados que falam por si.</h2>
+                    <p class="mt-6 text-slate-300">Nossa metodologia já gerou crescimento expressivo para dezenas de clientes. Veja alguns dos nossos resultados médios:</p>
+                    <div class="mt-8 grid grid-cols-2 gap-6 text-center">
+                        <div class="bg-slate-800 p-6 rounded-lg">
+                            <span class="text-4xl font-bold text-cyan-400 counter" data-target="180">+0%</span>
+                            <p class="mt-2 text-sm text-slate-400">Aumento em Vendas</p>
+                        </div>
+                         <div class="bg-slate-800 p-6 rounded-lg">
+                            <span class="text-4xl font-bold text-cyan-400 counter" data-target="-45">0%</span>
+                            <p class="mt-2 text-sm text-slate-400">Redução no Custo por Aquisição</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-left">
+                    <span class="font-semibold text-cyan-400">ESTUDO DE CASO: CLÍNICA VIVER BEM</span>
+                    <h3 class="mt-4 text-xl font-bold text-white">+180% em Agendamentos Online</h3>
+                    <p class="mt-4 text-slate-300">A Clínica Viver Bem, referência em saúde, sofria com baixa conversão de agendamentos online e alto custo por paciente.</p>
+                    <ul class="mt-6 space-y-3 text-slate-400">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Reestruturamos as campanhas, focando em buscas por especialistas e procedimentos.</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Otimizamos o SEO Local, colocando a clínica no topo do Google Maps.</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Resultado: -45% no custo por aquisição e agenda lotada com 3 meses de antecedência.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="fundador" class="py-24">
+            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+                <span class="font-semibold text-cyan-400">O ESTRATEGISTA POR TRÁS DOS RESULTADOS</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-white">Olá, sou Davi Luiz.</h2>
+                <p class="mt-6 text-slate-300 text-lg">Com mais de 6 anos de experiência em marketing digital e passagens por grandes players do mercado, fundei a On Demand com uma missão clara: acabar com o "marketing de vaidade" e focar exclusivamente em estratégias que geram faturamento real para os clientes.</p>
+                <p class="mt-4 text-slate-300 text-lg">Minha filosofia é simples: marketing bom é marketing que vende. Se você busca um parceiro que fala a sua língua — a língua dos números e do crescimento —, você está no lugar certo.</p>
+            </div>
+        </section>
+
+        <section id="planos" class="py-24 bg-slate-900/70">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Planos Flexíveis para Cada Estágio do seu Negócio</h2>
+                    <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Sem contratos de gaveta, sem surpresas. Apenas crescimento.</p>
+                </div>
+                 <div class="mt-16 grid lg:grid-cols-3 gap-8 items-stretch">
+                    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 flex flex-col" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold text-white">Essencial</h3>
+                        <p class="mt-2 text-slate-400">Para negócios que precisam de uma base sólida e gestão profissional.</p>
+                        <p class="my-8 text-4xl font-extrabold text-white">R$1.297<span class="text-lg font-medium text-slate-400">/mês</span></p>
+                        <ul class="space-y-4 text-slate-300 flex-grow">
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Gestão de Redes Sociais</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Otimização de Google Meu Negócio</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Relatórios Mensais</li>
+                        </ul>
+                        <a href="https://wa.me/31996966686" class="mt-8 text-center w-full bg-slate-700 text-white py-3 px-6 rounded-full font-semibold hover:bg-slate-600 transition">Quero Começar</a>
+                    </div>
+                    <div class="bg-cyan-900/50 p-8 rounded-2xl border-2 border-cyan-400 flex flex-col ring-4 ring-cyan-500/20" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-bold text-white">Performance</h3>
+                             <span class="bg-cyan-400 text-slate-900 px-3 py-1 rounded-full text-xs uppercase font-bold">Mais Popular</span>
+                        </div>
+                        <p class="mt-2 text-slate-300">Para quem busca crescimento acelerado e um funil de vendas otimizado.</p>
+                        <p class="my-8 text-4xl font-extrabold text-white">R$2.497<span class="text-lg font-medium text-slate-400">/mês</span></p>
+                        <ul class="space-y-4 text-slate-200 flex-grow">
+                             <li class="flex items-center gap-3 font-semibold"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tudo do plano Essencial, e mais:</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Gestão de Tráfego Pago (Meta & Google)</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Criação de Landing Pages de Alta Conversão</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Otimização Contínua de Conversão (CRO)</li>
+                        </ul>
+                        <a href="https://wa.me/31996966686" class="mt-8 text-center w-full bg-cyan-500 text-slate-900 py-4 px-6 rounded-full font-bold btn-glow">Quero Acelerar</a>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-white">Scale</h3>
+                        <p class="mt-2 text-slate-400">A solução definitiva para dominar seu mercado e escalar sem limites.</p>
+                         <p class="my-8 text-3xl font-extrabold text-white">Sob Consulta</p>
+                        <ul class="space-y-4 text-slate-300 flex-grow">
+                             <li class="flex items-center gap-3 font-semibold"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tudo do plano Performance, e mais:</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Automação de Marketing & CRM</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dashboards Avançados (Business Intel.)</li>
+                             <li class="flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Consultoria Estratégica Contínua</li>
+                        </ul>
+                        <a href="https://wa.me/31996966686" class="mt-8 text-center w-full bg-slate-700 text-white py-3 px-6 rounded-full font-semibold hover:bg-slate-600 transition">Agendar Consulta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-slate-900/70">
+            <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-white text-center">Dúvidas? Nós temos as respostas.</h2>
+                <div class="mt-12 space-y-4">
+                     <details class="group bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-white">
+                            Qual o tempo mínimo de contrato?
+                            <span class="transform transition-transform duration-300 group-open:-rotate-180">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-slate-300">Não acreditamos em contratos de fidelidade. Nossos planos são mensais e nossa maior garantia é a entrega de resultados. Você fica porque quer, não porque precisa.</p>
+                    </details>
+                     <details class="group bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-white">
+                            O investimento em anúncios está incluso?
+                            <span class="transform transition-transform duration-300 group-open:-rotate-180">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-slate-300">Não. O valor do plano cobre nossa gestão, estratégia e otimização. O investimento em mídia (Google Ads, Meta Ads, etc.) é pago diretamente por você às plataformas, garantindo total transparência.</p>
+                    </details>
+                     <details class="group bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-white">
+                            Como funciona a comunicação e o suporte?
+                            <span class="transform transition-transform duration-300 group-open:-rotate-180">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-slate-300">Você terá um gerente de contas dedicado e um grupo de WhatsApp para comunicação ágil. Além disso, realizamos reuniões periódicas para alinhamento estratégico e apresentação de resultados.</p>
+                    </details>
+                </div>
+                <!-- FAQ com IA -->
+                 <div class="mt-12 bg-slate-800/50 p-8 rounded-2xl border border-slate-700 text-center">
+                    <h3 class="text-xl font-bold text-white">Ainda tem dúvidas? Pergunte à nossa IA.</h3>
+                    <p class="mt-2 text-slate-400">Nosso assistente de IA pode responder a outras questões sobre marketing digital.</p>
+                    <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                        <input id="faqInput" type="text" placeholder="Ex: Como o SEO pode ajudar meu negócio?" class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                        <button id="faqBtn" class="inline-flex items-center justify-center gap-2 bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-full font-semibold whitespace-nowrap">
+                            ✨ Perguntar
+                        </button>
+                    </div>
+                    <div id="faqResult" class="mt-6 text-left hidden">
+                        <div id="faqLoader" class="mx-auto loader"></div>
+                        <div id="faqContent" class="p-6 rounded-lg bg-slate-900"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto py-16 px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-white">Pronto para parar de gastar e começar a investir em marketing?</h2>
+            <p class="mt-4 text-slate-300 max-w-2xl mx-auto">Vamos agendar uma conversa de 15 minutos, sem compromisso, para um diagnóstico rápido do seu marketing atual.</p>
+             <div class="mt-10">
+                <a href="https://wa.me/31996966686" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-cyan-500 text-slate-900 px-8 py-4 rounded-full font-bold btn-glow">
+                    Agendar Diagnóstico Gratuito
+                </a>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-800 text-sm text-slate-400">
+                 <p>© 2025 On Demand Performance. Todos os direitos reservados.</p>
+                 <p class="mt-2">On Demand Agência Digital LTDA - CNPJ: 42.123.456/0001-78</p>
+            </div>
         </div>
-      </div>
+    </footer>
+    
+    <!-- Toast/Notification Element -->
+    <div id="notification" class="fixed bottom-5 right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300">
+        <p id="notification-message"></p>
     </div>
-  </section>
 
-  <!-- PORTFÓLIO (Comerciais com IA via YouTube) -->
-  <section id="portfolio" class="mx-auto max-w-6xl px-6 py-20">
-    <h2 class="text-center text-4xl font-extrabold text-white">Comerciais com IA</h2>
-    <p class="mx-auto mt-2 max-w-2xl text-center text-slate-400">Demonstrações de vídeos criados com inteligência artificial</p>
-    <div class="mt-12 grid gap-8 md:grid-cols-2">
-      <div class="flex flex-col items-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-_KcRCvAFqU?si=wqNSUi3bRHxvsgWo" title="Comercial Lavanderia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-lg shadow-lg w-full max-w-xl"></iframe>
-        <p class="mt-2 text-slate-300">Comercial da Lavanderia</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/K3a4JKN5GoI?si=5WlcxoHL62mmZrpE" title="Comercial Hidratante" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-lg shadow-lg w-full max-w-xl"></iframe>
-        <p class="mt-2 text-slate-300">Comercial do Hidratante</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9auykwomDUg?si=RlP8cQxdJ-AhaXsx" title="Comercial Hamburgueria 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-lg shadow-lg w-full max-w-xl"></iframe>
-        <p class="mt-2 text-slate-300">Comercial da Hamburgueria</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DAmiDUZpxh4?si=D6jhIF7x_jnm9TCq" title="Comercial Hamburgueria 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-lg shadow-lg w-full max-w-xl"></iframe>
-        <p class="mt-2 text-slate-300">Comercial do Hambúrguer</p>
-      </div>
-    </div>
-  </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                disable: 'mobile'
+            });
 
-  <!-- QUEM SOMOS -->
-  <section id="quemsomos" class="mx-auto max-w-6xl px-6 py-20 bg-slate-900/30 border-t border-b border-slate-800">
-    <h2 class="text-center text-4xl font-extrabold text-white">A Mente por Trás da Estratégia</h2>
-    <div class="mt-6 mx-auto max-w-3xl space-y-4 text-center">
-      <p class="text-lg text-slate-300">Eu sou Davi Luiz, estrategista digital e fundador da On Demand.</p>
-      <p class="text-lg text-slate-300">Em 2025, criei a On Demand com uma missão clara: dar a negócios locais acesso ao tipo de marketing digital inteligente e focado em resultados que, até então, parecia um privilégio de grandes empresas.</p>
-      <p class="text-lg text-slate-300">O nome "On Demand" reflete nossa filosofia de trabalho: agilidade, personalização e um serviço de alta qualidade entregue sob medida para sua necessidade. Diferente de grandes agências onde sua empresa é apenas mais um número, aqui você tem uma linha direta com quem define a estratégia e executa o plano.</p>
-      <p class="text-lg text-slate-300">Nosso compromisso é ser seu parceiro estratégico, usando a tecnologia e a criatividade para gerar crescimento real e mensurável para o seu negócio.</p>
-    </div>
-  </section>
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                const menuIcon = document.getElementById('menuIcon');
+                const closeIcon = document.getElementById('closeIcon');
+                const menuLinks = mobileMenu.querySelectorAll('a');
 
-  <!-- CTA FINAL -->
-  <section class="relative overflow-hidden bg-gradient-to-r from-purple-600 via-pink-500 to-sky-500 py-20">
-    <div class="relative mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-3xl font-bold text-white md:text-4xl">Pronto para Construir Algo Incrível Juntos?</h2>
-      <p class="mt-3 text-lg text-white/90">Uma conversa de 15 minutos pode ser o início da transformação do seu negócio.</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="#contato" class="rounded-full bg-white px-10 py-4 text-lg font-semibold text-purple-600 shadow-lg hover:bg-slate-100 transition">Contato</a>
-        <a href="https://wa.me/5531996966686" target="_blank" class="rounded-full bg-green-500 px-10 py-4 text-lg font-semibold text-white shadow-lg hover:opacity-90 transition">WhatsApp</a>
-      </div>
-    </div>
-  </section>
+                const toggleMenu = (forceClose = false) => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if ((forceClose && !isHidden) || !isHidden) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                        document.body.style.overflow = '';
+                        mobileToggle.setAttribute('aria-expanded', 'false');
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        mobileToggle.setAttribute('aria-expanded', 'true');
+                    }
+                };
 
-  <!-- CONTATO -->
-  <footer id="contato" class="bg-[#0a0d11] py-20">
-    <div class="mx-auto max-w-4xl px-6 text-center text-slate-400">
-      <h3 class="text-2xl font-semibold text-white">Vamos conversar?</h3>
-      <p class="mt-4">Envie um e-mail ou fale diretamente no WhatsApp.</p>
-      <div class="mt-6 space-y-3">
-        <p><strong>E-mail:</strong> <a href="mailto:daviluizjk0@gmail.com" class="text-sky-400 hover:underline">daviluizjk0@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5531996966686" class="text-green-400 hover:underline">(31) 9 9696-6686</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/daviluizjk" class="text-pink-400 hover:underline">@daviluizjk</a></p>
-      </div>
-      <p class="mt-10 text-sm text-slate-500">© 2025 On Demand Marketing Digital. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+                mobileToggle.addEventListener('click', () => toggleMenu());
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => toggleMenu(true));
+                });
+                
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        toggleMenu(true);
+                    }
+                });
+            }
 
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        const duration = 1500;
+                        const symbol = target > 0 ? '+' : '';
+                        let startTimestamp = null;
+                        const step = (timestamp) => {
+                            if (!startTimestamp) startTimestamp = timestamp;
+                            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                            const currentValue = Math.floor(progress * target);
+                            counter.textContent = `${symbol}${currentValue}%`;
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            } else {
+                                counter.textContent = `${symbol}${target}%`;
+                            }
+                        };
+                        window.requestAnimationFrame(step);
+                        obs.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.7 });
+            counters.forEach(counter => observer.observe(counter));
+            
+            // --- Lógica da IA do Gemini & Notificações ---
+
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            function showNotification(message, isError = true) {
+                notificationMessage.textContent = message;
+                notification.className = `fixed bottom-5 right-5 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 ${isError ? 'bg-red-600' : 'bg-green-600'}`;
+                notification.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    notification.classList.add('translate-y-20', 'opacity-0');
+                }, 4000);
+            }
+
+            const diagnoseBtn = document.getElementById('diagnoseBtn');
+            const businessInput = document.getElementById('businessInput');
+            const diagnosisResult = document.getElementById('diagnosisResult');
+            const loader = document.getElementById('loader');
+            const resultContent = document.getElementById('resultContent');
+            
+            const faqBtn = document.getElementById('faqBtn');
+            const faqInput = document.getElementById('faqInput');
+            const faqResult = document.getElementById('faqResult');
+            const faqLoader = document.getElementById('faqLoader');
+            const faqContent = document.getElementById('faqContent');
+
+            const apiKey = "";
+
+            async function callGemini(prompt, buttonToDisable) {
+                 if (!apiKey) {
+                    showNotification("A chave da API Gemini não está configurada.");
+                    return null;
+                }
+                buttonToDisable.disabled = true;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const result = await response.json();
+                    if (result.candidates && result.candidates[0]?.content.parts[0]?.text) {
+                       return result.candidates[0].content.parts[0].text;
+                    }
+                    return "Desculpe, não consegui gerar uma resposta. Tente novamente.";
+                } catch (error) {
+                    console.error("Erro ao chamar a API Gemini:", error);
+                    return "Ocorreu um erro ao se comunicar com a IA. Por favor, verifique sua conexão e tente novamente.";
+                } finally {
+                    buttonToDisable.disabled = false;
+                }
+            }
+
+            diagnoseBtn.addEventListener('click', async () => {
+                const business = businessInput.value;
+                if (!business.trim()) {
+                    showNotification("Por favor, insira o tipo de negócio ou URL.");
+                    return;
+                }
+                diagnosisResult.classList.remove('hidden');
+                loader.classList.remove('hidden');
+                resultContent.classList.add('hidden');
+
+                const prompt = `Aja como um consultor de marketing de performance sênior da agência 'On Demand'. Para um negócio descrito como '${business}', forneça um diagnóstico estratégico conciso e profissional. Formate a resposta em HTML, usando títulos (h3), parágrafos (p) e listas (ul/li). A estrutura deve ser: 1. Um título H3 'Diagnóstico Estratégico para ${business}'. 2. Um parágrafo de diagnóstico inicial. 3. Um título H3 'Plano de Ação Recomendado'. 4. Uma lista não ordenada (ul) com exatamente 3 ações (li) claras e práticas que a On Demand implementaria.`;
+                const responseText = await callGemini(prompt, diagnoseBtn);
+                
+                if(responseText){
+                    resultContent.innerHTML = responseText;
+                    loader.classList.add('hidden');
+                    resultContent.classList.remove('hidden');
+                } else {
+                    diagnosisResult.classList.add('hidden');
+                }
+            });
+            
+            faqBtn.addEventListener('click', async () => {
+                const question = faqInput.value;
+                if (!question.trim()) {
+                    showNotification("Por favor, digite sua pergunta.");
+                    return;
+                }
+                faqResult.classList.remove('hidden');
+                faqLoader.classList.remove('hidden');
+                faqContent.classList.add('hidden');
+                
+                const prompt = `Aja como o assistente de IA da agência de marketing de performance 'On Demand'. Responda à seguinte pergunta de um cliente em potencial de forma clara, prestativa e alinhada com os serviços da agência. A pergunta é: '${question}'. Mantenha a resposta concisa e profissional.`;
+                const responseText = await callGemini(prompt, faqBtn);
+                
+                if(responseText){
+                    faqContent.textContent = responseText;
+                    faqLoader.classList.add('hidden');
+                    faqContent.classList.remove('hidden');
+                } else {
+                    faqResult.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
