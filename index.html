@@ -306,8 +306,8 @@
             <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
                 <span class="font-semibold text-cyan-400">O ESTRATEGISTA POR TRÁS DOS RESULTADOS</span>
                 <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-white">Olá, sou Davi Luiz.</h2>
-                <p class="mt-6 text-slate-300 text-lg">Com mais de 6 anos de experiência em marketing digital e passagens por grandes players do mercado, fundei a On Demand com uma missão clara: acabar com o "marketing de vaidade" e focar exclusivamente em estratégias que geram faturamento real para os clientes.</p>
-                <p class="mt-4 text-slate-300 text-lg">Minha filosofia é simples: marketing bom é marketing que vende. Se você busca um parceiro que fala a sua língua — a língua dos números e do crescimento —, você está no lugar certo.</p>
+                <p class="mt-6 text-slate-300 text-lg">Nascido na era digital, minha formação em Marketing Digital foi construída sobre uma base de resultados práticos, não apenas teoria. Fundei a On Demand com uma missão clara: acabar com o "marketing de vaidade" e focar exclusivamente em estratégias que geram faturamento real para os clientes.</p>
+                <p class="mt-4 text-slate-300 text-lg">Minha filosofia é que o aprendizado real vem da aplicação e da análise de dados, não de livros empoeirados. Se você busca um parceiro que fala a sua língua — a língua dos números e do crescimento —, você está no lugar certo.</p>
             </div>
         </section>
 
@@ -552,7 +552,7 @@
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     const result = await response.json();
                     if (result.candidates && result.candidates[0]?.content.parts[0]?.text) {
-                       return result.candidates[0].content.parts[0].text;
+                       return result.candidates[0].content.parts[0].text.replace(/```html|```/g, '').trim();
                     }
                     return "Desculpe, não consegui gerar uma resposta. Tente novamente.";
                 } catch (error) {
@@ -573,7 +573,7 @@
                 loader.classList.remove('hidden');
                 resultContent.classList.add('hidden');
 
-                const prompt = `Aja como um consultor de marketing de performance sênior da agência 'On Demand'. Para um negócio descrito como '${business}', forneça um diagnóstico estratégico conciso e profissional. Formate a resposta em HTML, usando títulos (h3), parágrafos (p) e listas (ul/li). A estrutura deve ser: 1. Um título H3 'Diagnóstico Estratégico para ${business}'. 2. Um parágrafo de diagnóstico inicial. 3. Um título H3 'Plano de Ação Recomendado'. 4. Uma lista não ordenada (ul) com exatamente 3 ações (li) claras e práticas que a On Demand implementaria.`;
+                const prompt = `Aja como um consultor de marketing de performance sênior da agência 'On Demand'. Para um negócio descrito como '${business}', forneça um diagnóstico estratégico conciso e profissional. Formate a resposta em HTML, usando títulos (h3), parágrafos (p) e listas (ul/li). A estrutura deve ser: 1. Um título H3 'Diagnóstico Estratégico para ${business}'. 2. Um parágrafo de diagnóstico inicial. 3. Um título H3 'Plano de Ação Recomendado'. 4. Uma lista não ordenada (ul) com exatamente 3 ações (li) claras e práticas que a On Demand implementaria. A SUA RESPOSTA DEVE CONTER APENAS O CÓDIGO HTML, SEM NENHUM TEXTO EXPLICATIVO, SEM "\`\`\`html" no início ou "\`\`\`" no final. APENAS O HTML PURO.`;
                 const responseText = await callGemini(prompt, diagnoseBtn);
                 
                 if(responseText){
@@ -595,7 +595,7 @@
                 faqLoader.classList.remove('hidden');
                 faqContent.classList.add('hidden');
                 
-                const prompt = `Aja como o assistente de IA da agência de marketing de performance 'On Demand'. Responda à seguinte pergunta de um cliente em potencial de forma clara, prestativa e alinhada com os serviços da agência. A pergunta é: '${question}'. Mantenha a resposta concisa e profissional.`;
+                const prompt = `Aja como o assistente de IA da agência de marketing de performance 'On Demand'. Responda à seguinte pergunta de um cliente em potencial de forma clara, prestativa e alinhada com os serviços da agência. A pergunta é: '${question}'. Mantenha a resposta concisa e profissional. Retorne APENAS o texto da resposta, sem formatação ou explicações adicionais.`;
                 const responseText = await callGemini(prompt, faqBtn);
                 
                 if(responseText){
